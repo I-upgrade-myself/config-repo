@@ -2,12 +2,10 @@ server:
   port: 8761
 
 eureka:
-  instance:
-    hostname: discovery-service   # ім’я контейнера
   client:
-    register-with-eureka: false   # сервер сам не реєструється
-    fetch-registry: false         # не намагається отримувати реєстр
+    register-with-eureka: false
+    fetch-registry: false
   server:
-    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: false
     # service-url:
       # defaultZone: http://discovery-service:8761/eureka/ 
