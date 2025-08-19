@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:54321/auth_db   
+    username: auth_user
+    password: auth_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: bGkOZnNlT5JzV3lJpMmBpjC+HggdZvlYPFbdS70ypWo=
+  expiration: 3600000         
+  refresh-expiration: 604800000
