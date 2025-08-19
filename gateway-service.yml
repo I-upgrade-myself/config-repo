@@ -12,14 +12,7 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
-          filters:
-            - RewritePath=/api/auth/(?<segment>.*), /api/auth/${segment}
         - id: user-service
           uri: lb://user-service
           predicates:
             - Path=/api/users/**
-
-# eureka:
-#   client:
-#     service-url:
-#       defaultZone: http://discovery-service:8761/eureka/
